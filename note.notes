@@ -1,0 +1,137 @@
+-- aula 01 preparando o ambiente e instalando recursos --
+    intalar o nodejs
+    ir em www.typescriptlang.org > download > Globally Installing Typescript
+    > npm install -g typescript
+
+    instalar extenções no vscode:
+    Javascript and Typescript Nightly
+    Live Server
+    Material Icon Theme
+    Criar pasta e abrir no vscode
+
+-- aula 02 entendendo as formas de compilar o Typescript gerar Javascript  --
+
+    checar versoes:
+    node -v / npm -v / tsc --version
+
+    no vscode abrir o terminal , aperta para dividir o terminal, inseri um cmd(pra compilar) e outro powersheel(pra rodar o projeto)
+    criar um arquivo aula02.ts
+
+    no arquivo:
+    const canal = "CFB";
+    const curso = "Typescript";
+    console.log(canal);
+    console.log(curso);
+
+    precisamos compilar o arquivo ts para js
+
+    comando para compilar (gera o arquivo js):
+
+    tsc nomearquivo.ts
+
+    roda o js no terminar com o comando:
+
+    node nomearquivo.js
+
+    para compilar depois de feito alterações digita o comando novamente :
+
+    tsc nomearquivo.ts
+
+-- aula 03 Criando arquivos de configurações para facilitar a compilação --
+
+    Atualizar compilador no arquivo (ruim pq a cada compilação precisaria digitar o comando)
+    aula03.ts --target.ts --target "ES2016"
+
+    //ESNext pega a última versão do JS
+    aula03.ts --target.ts --target "ESNext"
+
+    quando compilamos ele compila para um versão js antiga
+    para ajustar na hora de compilar:
+
+    Criar arquivo tsconfig.json:
+    no prompt tsc + enter
+
+    tsc --init 
+
+    Muda a linha 14 para "target": "ESNext",   
+    	
+    //remove os comentários feitos no asrquivo ts quando compila para js - deixa o arquivo js sem comentarios
+    Linha 61 descomentar "removeComments": true,  
+
+    //onde serão salvos os arquivos js compilados 
+    Linha 60 descomentar "outDir": "./",  
+    Cria pastinha build "outDir": "./build",  
+
+    // Onde salvamos os arquivos ts
+    Linha 33 descomentar "rootDirs": [],
+    Cria pastinha src "rootDirs": ["./src"],    
+
+    //compilar todos os arquivos de uma vez na pasta src e joga na pasta build
+    Comando:
+    tsc
+
+-- aula 04 Entendendo como funciona Type Inference em Typescript --
+    ver arquivo nomearquivo.tsx
+
+    o watch serve par observar as alterações no arquivo e compilar automaticamente
+    
+    no cmd digita tsc --help 
+
+    procupar watch e digitar no cmd do vscode
+
+    tsc --watch ou tsc -w  
+
+    para rodar o arquivo :
+
+    no cmd node entra na pasta build cd build
+
+    node nomearquivo.js 
+
+-- aula 05 Entendendo como funciona UNION TYPES em Typescript --
+    UNION TYPES - recurso que permite adicionar valores de tipos diferentes em uma variável
+    usar somente se extremamente necessário
+
+    Usar o pipe, pode ser string ou number
+    let vteste:string|number;
+    
+-- aula 06 Aprendendo mais sobre Array e Readonly --
+    no arquivo aula06.ts
+
+-- aula 07 Aprendendo sobre TUPLAS em Typescript --
+    TUPLAS - permite criar um array com tipos especificos para posicoes especificas 
+
+    no arquivo aula07.ts
+
+-- aula 08 Aprendendo sobre o tipo OBJECT --
+ na aula08.ts
+
+-- aula 09 Aprendendo sobre ENUMS em Typescript --
+    ENUMS - permite criar um conjunto de constantes nomeadas
+
+    no arquivo aula09.ts
+
+-- aula 10 Diferencas entre NULL UNDEFINED e UNKNOWN --
+
+    no arquivo aula10.ts
+
+-- aula 11 Aprendendo sobre Type Assertion e Typecast --
+    
+    no arquivo aula11.ts
+
+    Type Assertion - afirma que um tipo desconhecido é de um tipo conhecido
+
+-- aula 12 Aprendendo sobre Funcoes --
+
+    no arquivo aula12.ts
+    
+-- aula 14 arrow function funcao anonima --
+
+    no arquivo aula14.ts
+
+-- aula 15 REST com SPREAD --
+
+    no arquivo aula15.ts
+
+-- aula 16 Aprendendo sobre POO Classes --
+
+    no arquivo aula 16.ts
