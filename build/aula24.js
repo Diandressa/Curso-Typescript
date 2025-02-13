@@ -1,5 +1,5 @@
 "use strict";
-class Contax {
+class ContaUser {
     numero;
     titular;
     saldoconta;
@@ -19,16 +19,26 @@ class Contax {
         return this.saldoconta;
     }
     deposito(valor) {
+        if (valor < 0) {
+            console.log(`Valor inválido`);
+            return;
+        }
         this.saldoconta += valor;
     }
     saque(valor) {
-        if (valor >= this.saldoconta) {
+        if (valor < 0) {
+            console.log(`Valor inválido`);
+            return;
+        }
+        if (valor <= this.saldoconta) {
             this.saldoconta -= valor;
         }
-        console.log(`Saldo insuficiente`);
+        else {
+            console.log(`Saldo insuficiente`);
+        }
     }
 }
-class ContaxPF extends Contax {
+class ContaUserX extends ContaUser {
     cpf;
     constructor(cpf, titular) {
         super(titular);
@@ -48,8 +58,16 @@ class ContaxPF extends Contax {
             super.deposito(valor);
         }
     }
+    saque(valor) {
+        if (valor > 1000) {
+            console.log(`Valor de saque muito grande para este tipo de conta`);
+        }
+        else {
+            super.saque(valor);
+        }
+    }
 }
-class ContaxPJ extends Contax {
+class ContaUserY extends ContaUser {
     cnpj;
     constructor(cnpj, titular) {
         super(titular);
@@ -69,14 +87,21 @@ class ContaxPJ extends Contax {
             super.deposito(valor);
         }
     }
+    saque(valor) {
+        if (valor > 10000) {
+            console.log(`Valor de saque muito grande para este tipo de conta`);
+        }
+        else {
+            super.saque(valor);
+        }
+    }
 }
-const contax1 = new ContaxPF(111, "Cristina");
-const contax2 = new ContaxPJ(222333, "Nicolau");
-contax1.deposito(800);
-contax1.deposito(200);
-contax1.deposito(1000);
-console.log(contax1.saldo());
-contax2.deposito(10000);
-contax2.deposito(10000);
-contax2.deposito(10001);
-console.log(contax2.saldo());
+const contauser1 = new ContaUserX(111, "Cristina");
+const contauser2 = new ContaUserY(222333, "Nicolau");
+contauser1.deposito(800);
+contauser1.deposito(200);
+contauser1.deposito(1000);
+contauser1.saque(1000);
+contauser1.saque(1000);
+contauser1.saque(10);
+console.log(contauser1.saldo());

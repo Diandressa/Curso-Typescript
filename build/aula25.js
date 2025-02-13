@@ -1,5 +1,5 @@
 "use strict";
-class ContaUser {
+class ContaUsuario {
     numero;
     titular;
     saldoconta;
@@ -15,15 +15,18 @@ class ContaUser {
         console.log(`Titular: ${this.titular}`);
         console.log(`Número.: ${this.numero}`);
     }
-    saldo() {
+    get saldo() {
         return this.saldoconta;
+    }
+    set saldo(saldoconta) {
+        this.saldoconta = saldoconta;
     }
     deposito(valor) {
         if (valor < 0) {
             console.log(`Valor inválido`);
             return;
         }
-        this.saldoconta += valor;
+        this.saldo += valor;
     }
     saque(valor) {
         if (valor < 0) {
@@ -31,14 +34,14 @@ class ContaUser {
             return;
         }
         if (valor <= this.saldoconta) {
-            this.saldoconta -= valor;
+            this.saldo -= valor;
         }
         else {
             console.log(`Saldo insuficiente`);
         }
     }
 }
-class ContaUserX extends ContaUser {
+class ContaUsuarioX extends ContaUsuario {
     cpf;
     constructor(cpf, titular) {
         super(titular);
@@ -67,7 +70,7 @@ class ContaUserX extends ContaUser {
         }
     }
 }
-class ContaUserY extends ContaUser {
+class ContaUsuarioY extends ContaUsuario {
     cnpj;
     constructor(cnpj, titular) {
         super(titular);
@@ -96,12 +99,9 @@ class ContaUserY extends ContaUser {
         }
     }
 }
-const contauser1 = new ContaUserX(111, "Cristina");
-const contauser2 = new ContaUserY(222333, "Nicolau");
-contauser1.deposito(800);
-contauser1.deposito(200);
-contauser1.deposito(1000);
-contauser1.saque(1000);
-contauser1.saque(1000);
-contauser1.saque(10);
-console.log(contauser1.saldo());
+const contaUsuario1 = new ContaUsuarioX(111, "Cristina");
+const contaUsuario2 = new ContaUsuarioY(222333, "Nicolau");
+contaUsuario1.deposito(800);
+contaUsuario1.deposito(200);
+contaUsuario1.deposito(1000);
+console.log(contaUsuario1.saldo);

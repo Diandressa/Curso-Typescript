@@ -1,4 +1,4 @@
-class Contax {
+class ContaUser {
     //Modificadores:
     protected numero:number
     protected titular:string
@@ -24,18 +24,27 @@ class Contax {
     }
 
     protected deposito(valor:number){
+        if(valor < 0){
+            console.log(`Valor inválido`)
+            return
+        }
         this.saldoconta += valor
     }
 
     protected saque(valor:number){
-        if(valor >= this.saldoconta){
-            this.saldoconta -= valor
+        if(valor < 0){
+            console.log(`Valor inválido`)
+            return
         }
-        console.log(`Saldo insuficiente`)
+        if(valor <= this.saldoconta){
+            this.saldoconta -= valor
+        } else {
+            console.log(`Saldo insuficiente`)
+        }
     }
 }
 
-class ContaxPF extends Contax {
+class ContaUserX extends ContaUser {
     cpf:number
     constructor (cpf:number, titular:string){
         super(titular)
@@ -60,8 +69,16 @@ class ContaxPF extends Contax {
             super.deposito(valor)
         }
     }
+
+    public saque(valor:number){
+        if(valor > 1000){
+            console.log(`Valor de saque muito grande para este tipo de conta`)
+        } else {
+            super.saque(valor)
+        }
+    }
 }
-class ContaxPJ extends Contax {
+class ContaUserY extends ContaUser {
     cnpj:number
 
     constructor(cnpj:number, titular:string){
@@ -83,23 +100,34 @@ class ContaxPJ extends Contax {
             super.deposito(valor)
         }
     }
+
+    public saque(valor:number){
+        if(valor > 10000){
+            console.log(`Valor de saque muito grande para este tipo de conta`)
+        } else {
+            super.saque(valor)
+        }
+    }
 }
 
-const contax1 = new ContaxPF(111, "Cristina");
-const contax2 = new ContaxPJ(222333, "Nicolau");
+const contauser1 = new ContaUserX(111, "Cristina");
+const contauser2 = new ContaUserY(222333, "Nicolau");
 
 //console.log(cont1.titular)
 //console.log(cont1.numero)
 
-contax1.deposito(800)
-contax1.deposito(200)
-contax1.deposito(1000)
-console.log(contax1.saldo())
+contauser1.deposito(800)
+contauser1.deposito(200)
+contauser1.deposito(1000)
+contauser1.saque(1000)
+contauser1.saque(1000)
+contauser1.saque(10)
+console.log(contauser1.saldo())
 
-contax2.deposito(10000)
-contax2.deposito(10000)
-contax2.deposito(10001)
-console.log(contax2.saldo())
+// contauser2.deposito(10000)
+// contauser2.deposito(10000)
+// contauser2.deposito(10001)
+// console.log(contauser2.saldo())
 
 //con1.info()
 //con2.info()
