@@ -13,7 +13,6 @@ class Conta2 {
         return Math.floor(Math.random() * 100000) + 1;
     }
     info() {
-        this.numero = 0;
         console.log(`Titular: ${this.titular}`);
         console.log(`Número.: ${this.numero}`);
     }
