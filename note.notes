@@ -1,7 +1,7 @@
 -- aula 01 preparando o ambiente e instalando recursos --
     intalar o nodejs
     ir em www.typescriptlang.org > download > Globally Installing Typescript
-    > npm install -g typescript
+    "> npm install -g typescript
 
     instalar extenções no vscode:
     Javascript and Typescript Nightly
