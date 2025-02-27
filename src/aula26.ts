@@ -70,7 +70,16 @@ abstract class Conta2 {
     }
 }
 
-class Conta2PF extends Conta2 {
+//quero implementar nas classes metodos e propriedades especificos
+interface Tributos{
+    taxaCalculo:number;
+    CalcularTrib(valor:number):number;
+}
+
+//usamos implements para usar a interface Tributos na classe
+
+class Conta2PF extends Conta2 implements Tributos{
+    
     cpf:number
     constructor (cpf:number, titular:string){
         super(titular)
@@ -78,6 +87,11 @@ class Conta2PF extends Conta2 {
 
         //consigo acessar as funcoes da classe pai com o this.info() no constructor 
         //this.info()
+    }
+    taxaCalculo = 10;
+    //Definir o metodo CalcularTrib da interface Tributos
+    CalcularTrib(valor: number): number {
+        return valor*this.taxaCalculo
     }
 
     info(){

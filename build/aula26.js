@@ -48,6 +48,10 @@ class Conta2PF extends Conta2 {
         super(titular);
         this.cpf = cpf;
     }
+    taxaCalculo = 10;
+    CalcularTrib(valor) {
+        return valor * this.taxaCalculo;
+    }
     info() {
         console.log(`Tipo...: Pessoa Física`);
         super.info();
