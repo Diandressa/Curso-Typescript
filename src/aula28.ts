@@ -32,11 +32,12 @@ let curso02:cursoProg;
 let curso03:cursoArtes;
 
 //preciso chamar a função aqui e passar o parametro com seu tipo e a ação dentro das chaves
-curso01={
+curso01= {
     titulo:"Typescript", 
     des:"Curso de Typescript", 
     aula: 100, 
     maxAlunos: 50, 
+
     iniciarCurso(text:string){
         console.log(text);
     }
