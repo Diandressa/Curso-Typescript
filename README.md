@@ -100,9 +100,8 @@ Procupar watch e digitar no cmd do vscode
 
 #### Para rodar o arquivo :
 
-no cmd node entra na pasta build 
+no cmd node entra na pasta build:
 
 `cd build`
 
 `node nomearquivo.js`
-
