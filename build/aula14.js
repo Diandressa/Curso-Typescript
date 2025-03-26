@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const fsoma2 = (n) => {
     let s = 0;
     n.forEach((e) => {

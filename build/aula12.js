@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function soma2(n1, n2) {
     let r = n1 + n2;
     return r;

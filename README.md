@@ -105,3 +105,17 @@ no cmd node entra na pasta build:
 `cd build`
 
 `node nomearquivo.js`
+
+### Extra - tsconfig modules
+
+Com o module de valor Commonjs no tsconfig, sempre que declaramos uma variável com mesmo nome já declarada em outro arquivo, ocorre um alerta de variáveis com nome iguais.
+
+Podemos atualizar o sistema de modules de commonjs, mais antigo, para Node16, mais recente. O Node16 usa a sintaxe ES Modules
+
+No arquivo tsconfig.json
+
+`"module": "commonjs",`
+
+Alteramos para:
+
+`"module": "Node16",`

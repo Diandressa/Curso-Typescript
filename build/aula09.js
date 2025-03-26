@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var dias;
 (function (dias) {
     dias[dias["domingo"] = 0] = "domingo";

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 function fsoma(...numeros) {
     let s = 0;
     for (let numero of numeros) {

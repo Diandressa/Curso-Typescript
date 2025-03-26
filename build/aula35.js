@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const obj = {
     cor1: "Verde",
     cor2: "Amarelo",

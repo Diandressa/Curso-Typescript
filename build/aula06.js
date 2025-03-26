@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let numeros = [10, 20, 30, 40];
 numeros.push(10);
 numeros.unshift(10);

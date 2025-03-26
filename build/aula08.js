@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 let dados = {
     nome: "Andressa",
     idade: 28,

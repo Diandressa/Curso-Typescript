@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 class Computador {
     nome = "Computador 1";
     ram = 0;
