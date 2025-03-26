@@ -120,6 +120,9 @@ namespace Motores{
 const carro2 = new Veiculos.CarroEsportivo("Ford Mustang", 2)
 const carro3 = new Veiculos.CarroPopular("Corola", 0)
 
+carro2.ligar()
+carro3.ligar()
+
 console.log(`Mome....: ${carro2.meuNomeget}`)
 console.log(`Cor.....: ${carro2.minhaCorget}`)
 console.log(`Potencia: ${carro2.minhaPotenciaget}`)
@@ -130,8 +133,6 @@ console.log(`Cor.....: ${carro3.minhaCorget}`)
 console.log(`Potencia: ${carro3.minhaPotenciaget}`)
 console.log(`Ligado..: ${carro3.estouLigadoget}`)
 
-carro2.ligar()
-carro3.ligar()
 
 
 
